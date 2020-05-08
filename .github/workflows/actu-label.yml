@@ -22,13 +22,13 @@ jobs:
       if: github.event.label.name == 'liens/DevOps'
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
-      uses: Ilshidur/action-discord@0.0.2
+      uses: Ilshidur/action-discord@f2373432ba5105bf3ec960c9aaab6c6427a0ad89
       with:
         args: 'Une nouvelle actu a été postée par {{ EVENT_PAYLOAD.issue.user.login }} : {{ EVENT_PAYLOAD.issue.title }}'
     - name: Discord Kubernetes
       if: github.event.label.name == 'liens/Kubernetes'
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_KUBERNETES }}
-      uses: Ilshidur/action-discord@0.0.2
+      uses: Ilshidur/action-discord@f2373432ba5105bf3ec960c9aaab6c6427a0ad89
       with:
         args: 'Une nouvelle actu a été postée par {{ EVENT_PAYLOAD.issue.user.login }} : {{ EVENT_PAYLOAD.issue.title }}'
