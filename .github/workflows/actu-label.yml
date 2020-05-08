@@ -24,7 +24,9 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVOPS }}
       uses: Ilshidur/action-discord@f2373432ba5105bf3ec960c9aaab6c6427a0ad89
       with:
-        args: 'Une nouvelle actu a été postée par @{{ EVENT_PAYLOAD.issue.user.login }} : "{{ EVENT_PAYLOAD.issue.title }}"'
+        args: |-
+          Une nouvelle actu a été postée par @{{ EVENT_PAYLOAD.issue.user.login }} : "{{ EVENT_PAYLOAD.issue.title }}"
+          {{ EVENT_PAYLOAD.issue.html_url}}
     - name: Discord Kubernetes
       if: github.event.label.name == 'liens/Kubernetes'
       env:
