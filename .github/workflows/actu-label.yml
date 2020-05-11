@@ -22,7 +22,7 @@ jobs:
       with:
         project: DevOps
         column: To Do
-        repo-token: ${{ secrets.GH_TOKEN }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   Kubernetes:
     if: github.event.label.name == 'liens/Kubernetes'
@@ -41,4 +41,4 @@ jobs:
         with:
           project: Kubernetes
           column: To Do
-          repo-token: ${{ secrets.GH_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
