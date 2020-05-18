@@ -2,23 +2,37 @@ name: rss
 
 on:
   schedule:
-  - cron: '*/5 * * * *'
+  - cron: '12 * * * *'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  gke-release:
-    # The type of runner that the job will run on
+  gke:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: guilhem/rss-issues-action@0.0.1
+    - uses: guilhem/rss-issues-action@0.0.2
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         feed: "https://cloud.google.com/feeds/kubernetes-engine-release-notes.xml"
         prefix: "[GKE]"
         dry-run: "false"
+        lastTime: "92h"
+        labels: "liens/Kubernetes"
+  aks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: guilhem/rss-issues-action@0.0.2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        feed: "https://github.com/Azure/AKS/releases.atom"
+        prefix: "[AKS]"
+        lastTime: "92h"
+        labels: "liens/Kubernetes"
+  eks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: guilhem/rss-issues-action@0.0.2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        feed: "https://docs.aws.amazon.com/eks/latest/userguide/doc-history.rss"
+        prefix: "[EKS]"
         lastTime: "92h"
         labels: "liens/Kubernetes"
