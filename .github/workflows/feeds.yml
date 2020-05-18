@@ -19,3 +19,5 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         feed: "https://cloud.google.com/feeds/kubernetes-engine-release-notes.xml"
         prefix: "[GKE] "
+        dry-run: "true"
+        lastTime: "300h"
