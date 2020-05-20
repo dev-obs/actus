@@ -8,7 +8,7 @@ jobs:
   gke:
     runs-on: ubuntu-latest
     steps:
-    - uses: guilhem/rss-issues-action@0.0.2
+    - uses: guilhem/rss-issues-action@0.1.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         feed: "https://cloud.google.com/feeds/kubernetes-engine-release-notes.xml"
@@ -19,7 +19,7 @@ jobs:
   aks:
     runs-on: ubuntu-latest
     steps:
-    - uses: guilhem/rss-issues-action@0.0.2
+    - uses: guilhem/rss-issues-action@0.1.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         feed: "https://github.com/Azure/AKS/releases.atom"
@@ -29,7 +29,7 @@ jobs:
   eks:
     runs-on: ubuntu-latest
     steps:
-    - uses: guilhem/rss-issues-action@master
+    - uses: guilhem/rss-issues-action@0.1.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         feed: "https://docs.aws.amazon.com/eks/latest/userguide/doc-history.rss"
