@@ -36,3 +36,13 @@ jobs:
         prefix: "[EKS]"
         lastTime: "336h"
         labels: "liens/Kubernetes"
+  lwkd:
+    name: Last Week in Kubernetes Development
+    runs-on: ubuntu-latest
+    steps:
+    - uses: guilhem/rss-issues-action@0.1.0
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        feed: "http://lwkd.info/feed.xml"
+        lastTime: "336h"
+        labels: "liens/Kubernetes"
