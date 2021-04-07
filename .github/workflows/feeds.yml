@@ -2,7 +2,7 @@ name: rss
 
 on:
   schedule:
-  - cron: '18 * * * *'
+  - cron: '18 07 * * *'
   workflow_dispatch:
 
 jobs:
